@@ -162,13 +162,18 @@ export default function Hero() {
             href="https://postula-pro.vercel.app/"
             target="_blank"
             rel="noreferrer"
-            className="mb-8 rounded-2xl bg-white p-4 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)]"
+            className="group relative isolate mb-8 rounded-2xl bg-white p-4 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            whileHover={{ y: -10, scale: 1.1, rotate: [-2, 3, -1, 0] }}
+            whileTap={{ scale: 0.96 }}
             transition={{ duration: 0.6 }}
             aria-label="Open PostulaPro"
           >
-            <BrandIcon />
+            <span className="absolute -inset-5 -z-10 rounded-[2rem] bg-[conic-gradient(from_90deg,#ff3d81,#ffb000,#fff188,#00d084,#00bfff,#7c3aed,#ff3d81)] opacity-0 blur-2xl transition duration-300 group-hover:opacity-90" />
+            <span className="relative z-10 block">
+              <BrandIcon />
+            </span>
           </motion.a>
           <motion.h1
             className="max-w-4xl text-4xl font-medium tracking-tight text-[#141414] md:text-6xl lg:text-7xl"
@@ -191,10 +196,10 @@ export default function Hero() {
           </motion.p>
           <motion.a
             href="#milestones"
-            className="mt-9 rounded-xl bg-[#2563EB] px-6 py-3 text-sm font-medium text-white shadow-lg shadow-blue-500/20"
+            className="mt-9 rounded-xl bg-[#2563EB] px-6 py-3 text-sm font-medium text-white shadow-lg shadow-blue-500/20 transition-colors hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-500/30"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ y: -3, scale: 1.05 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
             View milestones

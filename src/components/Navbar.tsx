@@ -22,26 +22,33 @@ export default function Navbar() {
 
       <nav className="hidden items-center gap-8 md:flex">
         {navItems.map((item) => (
-          <a key={item.href} href={item.href} className="text-sm text-gray-500 transition hover:text-black">
+          <a
+            key={item.href}
+            href={item.href}
+            className="rounded-lg px-2 py-1 text-sm text-gray-500 transition hover:-translate-y-0.5 hover:bg-white hover:text-black hover:shadow-sm"
+          >
             {item.label}
           </a>
         ))}
       </nav>
 
       <div className="hidden items-center gap-4 md:flex">
-        <a href="https://modoclassproject.netlify.app" className="text-sm text-gray-500 transition hover:text-black">
+        <a
+          href="https://modoclassproject.netlify.app"
+          className="rounded-lg px-2 py-1 text-sm text-gray-500 transition hover:-translate-y-0.5 hover:bg-white hover:text-black hover:shadow-sm"
+        >
           MODO
         </a>
         <a
           href="https://schoolpresentation1.netlify.app"
-          className="rounded-xl border border-black/10 bg-white px-4 py-2 text-sm text-[#141414] transition hover:bg-gray-50"
+          className="rounded-xl border border-black/10 bg-white px-4 py-2 text-sm text-[#141414] shadow-sm transition hover:-translate-y-0.5 hover:border-[#2563EB]/30 hover:bg-gray-50 hover:shadow-lg hover:shadow-blue-500/10"
         >
           View Work
         </a>
       </div>
 
       <button
-        className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-black/10 bg-white md:hidden"
+        className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-black/10 bg-white transition hover:-translate-y-0.5 hover:border-[#2563EB]/30 hover:shadow-lg hover:shadow-blue-500/10 md:hidden"
         onClick={() => setOpen((value) => !value)}
         aria-label={open ? "Close menu" : "Open menu"}
       >
@@ -55,7 +62,7 @@ export default function Navbar() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm text-gray-500 transition hover:text-black"
+                className="rounded-lg px-3 py-2 text-sm text-gray-500 transition hover:bg-gray-50 hover:text-black"
                 onClick={() => setOpen(false)}
               >
                 {item.label}
@@ -66,13 +73,13 @@ export default function Navbar() {
           <div className="flex flex-col gap-3">
             <a
               href="https://modoclassproject.netlify.app"
-              className="rounded-xl px-4 py-2 text-center text-sm text-gray-500 hover:text-black"
+              className="rounded-xl px-4 py-2 text-center text-sm text-gray-500 transition hover:bg-gray-50 hover:text-black"
             >
               MODO
             </a>
             <a
               href="https://schoolpresentation1.netlify.app"
-              className="rounded-xl bg-[#2563EB] px-4 py-3 text-center text-sm font-medium text-white shadow-lg shadow-blue-500/20"
+              className="rounded-xl bg-[#2563EB] px-4 py-3 text-center text-sm font-medium text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-500/30"
               onClick={() => setOpen(false)}
             >
               View Work

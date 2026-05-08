@@ -86,7 +86,6 @@ export default function Milestones() {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.65, delay: Math.min(index * 0.08, 0.32), ease: "easeOut" }}
-                whileHover={{ y: -4 }}
               >
                 <div className="aspect-[16/10] overflow-hidden bg-gray-100">
                   <motion.img
@@ -112,7 +111,7 @@ export default function Milestones() {
                       <button
                         type="button"
                         onClick={() => setPreview(item)}
-                        className="inline-flex items-center gap-2 rounded-xl border border-black/10 bg-white px-4 py-2 text-sm font-medium text-[#141414] transition hover:bg-gray-50"
+                        className="inline-flex items-center gap-2 rounded-xl border border-black/10 bg-white px-4 py-2 text-sm font-medium text-[#141414] shadow-sm transition hover:-translate-y-0.5 hover:border-[#2563EB]/30 hover:bg-gray-50 hover:shadow-lg hover:shadow-blue-500/10"
                       >
                         Open file
                         <ArrowUpRight className="h-4 w-4" />
@@ -136,7 +135,7 @@ export default function Milestones() {
               <button
                 type="button"
                 onClick={() => setPreview(null)}
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-black/10 bg-white text-[#141414] transition hover:bg-gray-50"
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-black/10 bg-white text-[#141414] transition hover:-translate-y-0.5 hover:border-[#2563EB]/30 hover:bg-gray-50 hover:shadow-lg hover:shadow-blue-500/10"
                 aria-label="Close preview"
               >
                 <X className="h-5 w-5" />
@@ -164,7 +163,7 @@ export default function Milestones() {
                     href={preview.file}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-5 inline-flex items-center gap-2 rounded-xl bg-[#2563EB] px-5 py-3 text-sm font-medium text-white shadow-lg shadow-blue-500/20"
+                    className="mt-5 inline-flex items-center gap-2 rounded-xl bg-[#2563EB] px-5 py-3 text-sm font-medium text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-500/30"
                   >
                     Open PowerPoint
                     <ArrowUpRight className="h-4 w-4" />
