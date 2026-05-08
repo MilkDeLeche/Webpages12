@@ -15,11 +15,11 @@ const milestones = [
   {
     id: "planning",
     title: "Project 2 - Microsoft Project",
-    copy: "The project schedule breaks the work into tasks, dates, and responsibilities. This milestone shows how the team planned the timeline and tracked progress through the Systems Development Life Cycle.",
-    image: "/notebook.png",
+    copy: "The Microsoft Project milestone will show the schedule, task list, dates, and responsibilities for the team. The actual Project 02 file still needs to be added before the final presentation.",
+    image: "/project05.png",
     icon: Workflow,
-    file: "/Project%20Notebook.pdf",
-    fileType: "pdf"
+    file: "",
+    fileType: "missing"
   },
   {
     id: "visio",
@@ -33,11 +33,11 @@ const milestones = [
   {
     id: "development",
     title: "Project 4 - Development",
-    copy: "The development phase turns the planned idea into a working web presence. This page collects the implementation evidence and shows how the team moved from design into a usable result.",
-    image: "/project05.png",
+    copy: "The development phase turns the planned idea into a working web presence. This milestone uses the project notebook to document implementation evidence and show how the team moved from design into a usable result.",
+    image: "/notebook.png",
     icon: ArrowUpRight,
-    file: "/project05.png",
-    fileType: "image"
+    file: "/Project%20Notebook.pdf",
+    fileType: "pdf"
   },
   {
     id: "presentation",
@@ -104,14 +104,20 @@ export default function Milestones() {
                     <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#2563EB]/10 text-[#2563EB]">
                       <Icon className="h-5 w-5" />
                     </span>
-                    <button
-                      type="button"
-                      onClick={() => setPreview(item)}
-                      className="inline-flex items-center gap-2 rounded-xl border border-black/10 bg-white px-4 py-2 text-sm font-medium text-[#141414] transition hover:bg-gray-50"
-                    >
-                      Open file
-                      <ArrowUpRight className="h-4 w-4" />
-                    </button>
+                    {item.fileType === "missing" ? (
+                      <span className="inline-flex items-center rounded-xl border border-dashed border-black/15 bg-gray-50 px-4 py-2 text-sm font-medium text-gray-400">
+                        File needed
+                      </span>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => setPreview(item)}
+                        className="inline-flex items-center gap-2 rounded-xl border border-black/10 bg-white px-4 py-2 text-sm font-medium text-[#141414] transition hover:bg-gray-50"
+                      >
+                        Open file
+                        <ArrowUpRight className="h-4 w-4" />
+                      </button>
+                    )}
                   </div>
                   <h3 className="text-2xl font-medium tracking-tight">{item.title}</h3>
                   <p className="mt-4 leading-7 text-gray-500">{item.copy}</p>
